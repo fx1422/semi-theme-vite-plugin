@@ -1,0 +1,76 @@
+{
+  "name": "semi-theme-vite-plugin",
+  "version": "1.0.0",
+  "description": "Vite plugin for Semi Design theme customization",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "package.json"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rimraf dist",
+    "lint": "eslint src/**/*.ts --fix",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"*.{js,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"*.{js,json,md}\"",
+    "prepublishOnly": "npm run clean && npm run build && npm run format:check",
+    "prepack": "npm run build",
+    "release": "npm run prepublishOnly && npm publish",
+    "release:dry": "npm run prepublishOnly && npm publish --dry-run"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "semi-design",
+    "theme",
+    "scss",
+    "css"
+  ],
+  "author": {
+    "name": "ai-proto",
+    "email": "1422788179@qq.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/fx1422/semi-theme-vite-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/fx1422/semi-theme-vite-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fx1422/semi-theme-vite-plugin.git"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "peerDependencies": {
+    "vite": ">=4.0.0",
+    "sass": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.4",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}

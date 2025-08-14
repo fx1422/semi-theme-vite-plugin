@@ -1,0 +1,53 @@
+# Source files
+src/
+*.ts
+!*.d.ts
+
+# Development files
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+tests/
+test/
+*.test.*
+*.spec.*
+coverage/
+
+# Build artifacts
+node_modules/
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# Development configs
+tsconfig.json
+tsconfig.*.json
+.eslintrc*
+.prettierrc*
+vite.config.*
+vitest.config.*
+
+# Git
+.git
+.gitignore
+
+# Documentation (except README)
+docs/
+*.md
+!README.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Package manager
+pnpm-lock.yaml
+yarn.lock
+package-lock.json

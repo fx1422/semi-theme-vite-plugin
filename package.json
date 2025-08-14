@@ -32,7 +32,8 @@
     "prepublishOnly": "npm run clean && npm run build && npm run format:check",
     "prepack": "npm run build",
     "release": "npm run prepublishOnly && npm publish",
-    "release:dry": "npm run prepublishOnly && npm publish --dry-run"
+    "release:dry": "npm run prepublishOnly && npm publish --dry-run",
+    "publish": "npm publish"
   },
   "keywords": [
     "vite",
